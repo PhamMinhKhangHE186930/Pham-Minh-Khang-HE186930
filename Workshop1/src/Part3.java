@@ -5,27 +5,23 @@ import java.util.Scanner;
 public class Part3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String[] name = new String[1];
+        System.out.print("Enter number of students: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+        String name[] = new String[n];
         System.out.println("Enter names: ");
         for (int i = 0; i < name.length; i++) {
             name[i] = sc.nextLine();
-            char[] charname = name[i].toCharArray();
-            boolean space = true;
-            for (int j = 0; j < charname.length; j++) {
-                if(Character.isLetter(charname[j])){
-                    if(space){
-                        charname[j] = Character.toUpperCase(charname[j]);
-                        space = false;
-                    }
-                }
-                else{
-                    space = true;
-                }
-            }
-            name[i] = String.valueOf(charname);
         }
-        for (String name1 : name) {
-            System.out.println(name1);
+        for (String x : name) {
+            Scanner scsb = new Scanner(x);
+            while(scsb.hasNext()){
+                String word = scsb.next();
+                String firstLetter = word.substring(0, 1).toUpperCase();
+                String restOfWord = word.substring(1);
+                System.out.print(firstLetter + restOfWord + " ");
+            }
+            System.out.println(x);
         }
     }
 }
