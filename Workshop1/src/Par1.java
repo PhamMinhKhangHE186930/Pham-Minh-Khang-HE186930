@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Par1 {
     public static void main(String[] args) {
-        int matrix  [][];
+        int matrix[][];
         int rows;
         int cols;
         Scanner sc = new Scanner(System.in);

@@ -21,7 +21,7 @@ public class Part3 {
                 String restOfWord = word.substring(1);
                 System.out.print(firstLetter + restOfWord + " ");
             }
-            System.out.println(x);
+            System.out.println();
         }
     }
 }
