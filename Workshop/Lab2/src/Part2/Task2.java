@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 public class Task2 {
     public String inputString() throws Exception{
-        String pattern="SE1863";
+        String pattern="SE\\d{3}";
         String s;
         Scanner sc=new Scanner(System.in);
-        System.out.println("input string:");
+        System.out.print("input string:");
         s=sc.nextLine();
         if(!s.matches(pattern)) throw new Exception();
         return s;

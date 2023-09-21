@@ -13,7 +13,7 @@ public class Task1 {
         do{
             try{
                 String s;
-                String pattern = "SE1863";
+                String pattern = "SE\\d{3}";
                 Scanner sc = new Scanner(System.in);
                 System.out.print("Enter the string:");
                 s = sc.nextLine();
