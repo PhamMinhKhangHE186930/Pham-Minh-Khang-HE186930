@@ -1,0 +1,2 @@
+java mypkg.PkgDemo
+Pause
