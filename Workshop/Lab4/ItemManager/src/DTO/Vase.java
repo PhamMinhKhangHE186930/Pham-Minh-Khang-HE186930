@@ -44,29 +44,23 @@ public class Vase extends Item{
     public void inputVase(){
         Scanner sc = new Scanner(System.in);
         input();
-        boolean cont = true;
         do{
             try{
                 System.out.print("Enter material: ");
-                String mat = sc.nextLine();
-                if(mat.isEmpty()) throw new Exception();
-                setMaterial(mat);
-                cont = false;
+                material = sc.nextLine();
+                if(material.isEmpty()) throw new Exception();
             }catch(Exception e){
                 System.out.println("material is empty");
             }
-        }while(cont);
-        boolean cont2 = true;
+        }while(material.isEmpty());
         do{
             try{
                 System.out.print("Enter height: ");
-                int hei = sc.nextInt(); sc.nextLine();
-                if(hei<=0) throw new Exception();
-                setHeight(hei);
-                cont2 = false;
+                height = Integer.parseInt(sc.nextLine());
+                if(height<=0) throw new Exception();
             }catch(Exception e){
                 System.out.println("height must greater than 0");
             }
-        }while(cont2);
+        }while(height<=0);
     }
 }

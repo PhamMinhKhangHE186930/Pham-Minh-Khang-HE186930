@@ -8,7 +8,7 @@ public class Menu {
         for (int i=0; i<options.length; i++){
             System.out.println((i+1) + "-" + options[i]);
         }
-        System.out.println("Choose 1.." + options.length + ":");
+        System.out.print("Choose 1.." + options.length + ":");
         Scanner sc = new Scanner(System.in);
         return Integer.parseInt(sc.nextLine());
     }

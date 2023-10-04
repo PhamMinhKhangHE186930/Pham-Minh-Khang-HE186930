@@ -8,8 +8,8 @@ import java.util.Scanner;
  * @author ADMIN
  */
 public class Item {
-    int value;
-    String creator;
+    protected int value;
+    protected String creator;
 
     public Item() {
     }
@@ -43,29 +43,23 @@ public class Item {
     public void input(){
         Scanner sc = new Scanner(System.in);
         
-        boolean cont = true;
         do{
             try{
                 System.out.print("Enter creator: ");
-                String cre = sc.nextLine();
-                if(cre.isEmpty()) throw new Exception();
-                setCreator(cre);
-                cont = false;
+                creator = sc.nextLine();
+                if(creator.isEmpty()) throw new Exception();
             }catch(Exception e){
                 System.out.println("creator is empty");
             }
-        }while(cont);
-        boolean cont2 = true;
+        }while(creator.isEmpty());
         do{
             try{
                 System.out.print("Enter value: ");
-                int val = sc.nextInt(); sc.nextLine();
-                if(val<=0) throw new Exception();
-                setValue(val);
-                cont2 = false;
+                value = Integer.parseInt(sc.nextLine());
+                if(value<=0) throw new Exception();
             }catch(Exception e){
                 System.out.println("creator must greater than 0");
             }
-        }while(cont2);
+        }while(value<=0);
     }
 }

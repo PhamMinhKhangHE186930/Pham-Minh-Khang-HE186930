@@ -65,53 +65,46 @@ public class Painting extends Item{
     public void inputPaiting(){
         Scanner sc = new Scanner(System.in);
         input();
-        boolean cont = true;
         do{
             try{
                 System.out.print("Enter height: ");
-                int hei = sc.nextInt(); sc.nextLine();
-                if(hei<=0) throw new Exception();
-                setHeight(hei);
-                cont = false;
+                height = Integer.parseInt(sc.nextLine());
+                if(height<=0) throw new Exception();
             }catch(Exception e){
                 System.out.println("height must greater than 0");
             }
-        }while(cont);
-        boolean cont2 = true;
+        }while(height<=0);
         do{
             try{
                 System.out.print("Enter width: ");
-                int wid = sc.nextInt(); sc.nextLine();
-                if(wid<=0) throw new Exception();
-                setWidth(wid);
+                width = Integer.parseInt(sc.nextLine());
+                if(width<=0) throw new Exception();
+                setWidth(width);
+            }catch(Exception e){
+                System.out.println("width must greater than 0");
+            }
+        }while(width<=0);
+        boolean cont1 = true;
+        do{
+            try{
+                System.out.print("Enter Watercolour: ");
+                isWatercolour = sc.nextBoolean();
+                if(isWatercolour!=true||isWatercolour!=false) throw new Exception();
+                cont1 = false;
+            }catch(Exception e){
+                System.out.println("watercolour must be true or false");
+            }
+        }while(cont1);
+        boolean cont2 = true;
+        do{
+            try{
+                System.out.print("Enter Framed: ");
+                isFramed = sc.nextBoolean();
+                if(isFramed!=true||isFramed!=false) throw new Exception();
                 cont2 = false;
             }catch(Exception e){
                 System.out.println("width must greater than 0");
             }
         }while(cont2);
-        boolean cont3 = true;
-        do{
-            try{
-                System.out.print("Enter Watercolour: ");
-                boolean wc = sc.nextBoolean();
-                if(wc!=true||wc!=false) throw new Exception();
-                setIsWatercolour(wc);
-                cont2 = false;
-            }catch(Exception e){
-                System.out.println("watercolour must be true or false");
-            }
-        }while(cont3);
-        boolean cont4 = true;
-        do{
-            try{
-                System.out.print("Enter Framed: ");
-                boolean fr = sc.nextBoolean();
-                if(fr!=true||fr!=false) throw new Exception();
-                setIsFramed(fr);
-                cont2 = false;
-            }catch(Exception e){
-                System.out.println("width must greater than 0");
-            }
-        }while(cont4);
     }
 }
