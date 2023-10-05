@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class AntiqueShop {
     public static void main(String[] args) {
-        String[] options = {"Create a Vase","Creat a Statue", "Create a Painting", "díplay the item"};
+        String[] options = {"Create a Vase","Creat a Statue", "Create a Painting", "display the item"};
         Item item = null;
         int choice=0;
         Scanner sc = new Scanner(System.in);

@@ -42,24 +42,29 @@ public class Item {
     
     public void input(){
         Scanner sc = new Scanner(System.in);
-        
+        boolean cont = true;
         do{
             try{
                 System.out.print("Enter creator: ");
                 creator = sc.nextLine();
                 if(creator.isEmpty()) throw new Exception();
+                cont = false;
             }catch(Exception e){
                 System.out.println("creator is empty");
+                cont = true;
             }
-        }while(creator.isEmpty());
+        }while(cont);
+        cont = true;
         do{
             try{
                 System.out.print("Enter value: ");
                 value = Integer.parseInt(sc.nextLine());
                 if(value<=0) throw new Exception();
+                cont = false;
             }catch(Exception e){
                 System.out.println("creator must greater than 0");
+                cont = true;
             }
-        }while(value<=0);
+        }while(cont);
     }
 }

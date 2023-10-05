@@ -64,47 +64,53 @@ public class Painting extends Item{
     }
     public void inputPaiting(){
         Scanner sc = new Scanner(System.in);
+        boolean cont = true;
         input();
         do{
             try{
                 System.out.print("Enter height: ");
                 height = Integer.parseInt(sc.nextLine());
                 if(height<=0) throw new Exception();
+                cont = false;
             }catch(Exception e){
                 System.out.println("height must greater than 0");
+                cont = true;
             }
-        }while(height<=0);
+        }while(cont);
         do{
             try{
                 System.out.print("Enter width: ");
                 width = Integer.parseInt(sc.nextLine());
                 if(width<=0) throw new Exception();
-                setWidth(width);
+                cont = false;
             }catch(Exception e){
                 System.out.println("width must greater than 0");
+                cont = true;
             }
-        }while(width<=0);
-        boolean cont1 = true;
+        }while(cont);
+        cont = true;
         do{
             try{
                 System.out.print("Enter Watercolour: ");
                 isWatercolour = sc.nextBoolean();
                 if(isWatercolour!=true||isWatercolour!=false) throw new Exception();
-                cont1 = false;
+                cont = false;
             }catch(Exception e){
                 System.out.println("watercolour must be true or false");
+                cont = true;
             }
-        }while(cont1);
-        boolean cont2 = true;
+        }while(cont);
+        cont = true;
         do{
             try{
                 System.out.print("Enter Framed: ");
                 isFramed = sc.nextBoolean();
                 if(isFramed!=true||isFramed!=false) throw new Exception();
-                cont2 = false;
+                cont = false;
             }catch(Exception e){
                 System.out.println("width must greater than 0");
+                cont = true;
             }
-        }while(cont2);
+        }while(cont);
     }
 }

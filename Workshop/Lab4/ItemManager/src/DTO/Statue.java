@@ -42,25 +42,30 @@ public class Statue extends Item{
     }
     public void inputStatue(){
         Scanner sc = new Scanner(System.in);
+        boolean cont = true;
         input();
         do{
             try{
                 System.out.print("Enter colour: ");
                 colour = sc.nextLine();
                 if(colour.isEmpty()) throw new Exception();
+                cont = false;
             }catch(Exception e){
                 System.out.println("Colour is empty");
+                cont = true;
             }
-        }while(colour.isEmpty());
-        boolean cont2 = true;
+        }while(cont);
+        cont = true;
         do{
             try{
                 System.out.print("Enter weight: ");
                 weight = Integer.parseInt(sc.nextLine());
                 if(weight<=0) throw new Exception();
+                cont = false;
             }catch(Exception e){
                 System.out.println("weight must greater than 0");
+                cont = true;
             }
-        }while(weight<=0);
+        }while(cont);
     }
 }
