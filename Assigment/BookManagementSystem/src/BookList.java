@@ -83,14 +83,14 @@ public class BookList extends Book{
     }
     public void LoadFromFile(String fname){
         File f = new File(fname);
-        try{
-            FileWriter fw = new FileWriter(fname);
-            BufferedWriter bf = new BufferedWriter(fw);
-            bf.write(wList.toString());
-            bf.close();
-        }catch(IOException e){
-            System.out.println(e);
-        }
+//        try{
+//            FileWriter fw = new FileWriter(fname);
+//            BufferedWriter bf = new BufferedWriter(fw);
+//            bf.write(wList.toString());
+//            bf.close();
+//        }catch(IOException e){
+//            System.out.println(e);
+//        }
         try{
             Scanner rd = new Scanner(f);
 //            sc.useDelimiter("[[.]\\d]+");
